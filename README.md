@@ -1,2 +1,2 @@
 # Meditrack
-Ambulance and Hospital tracking
+Tracking Ambulances and Hospitals

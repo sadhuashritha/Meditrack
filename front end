@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ambulance Service</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Ambulance Service</h1>
+  </header>
+  
+  <main>
+    <div id="requestForm">
+      <h2>Request Ambulance</h2>
+      <form id="ambulanceForm">
+        <label for="locationInput">Location:</label>
+        <input type="text" id="locationInput" placeholder="Enter your location">
+
+        <label for="emergencyType">Emergency Type:</label>
+        <select id="emergencyType">
+          <option value="accident">Accident</option>
+          <option value="medical">Medical Emergency</option>
+          <option value="other">Other</option>
+        </select>
+
+        <button type="submit">Request Ambulance</button>
+      </form>
+    </div>
+
+    <div id="ambulanceInfo">
+      <h2>Ambulance Information</h2>
+      <p id="ambulanceStatus">Ambulance Status: <span id="status">Not Requested</span></p>
+      <p id="ambulanceLocation">Ambulance Location: <span id="ambLocation">N/A</span></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<html>
+<head>
+<style>
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+#requestForm, #ambulanceInfo {
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+}
+
+label, input, select, button {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+</html>
+
+
+document.getElementById('ambulanceForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const location = document.getElementById('locationInput').value;
+  const emergencyType = document.getElementById('emergencyType').value;
+
+  // Simulate sending request to backend (in real app, this would be an API call)
+  setTimeout(() => {
+    document.getElementById('status').innerText = 'Requested';
+    document.getElementById('ambLocation').innerText = location;
+  }, 2000); // Simulating a delay of 2 seconds for request processing
+});
